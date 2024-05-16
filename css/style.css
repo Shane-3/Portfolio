@@ -92,6 +92,8 @@ section{
 .home{
     display:flex;
     align-items: center;
+    background-image: radial-gradient(circle at 57% 36%, rgba(102,252,241, 0.17) 0%, rgba(102,252,241, 0.17) 10%,transparent 10%, transparent 100%),radial-gradient(circle at 22% 61%, rgba(102,252,241, 0.17) 0%, rgba(102,252,241, 0.17) 36%,transparent 36%, transparent 100%),radial-gradient(circle at 68% 97%, rgba(102,252,241, 0.17) 0%, rgba(102,252,241, 0.17) 41%,transparent 41%, transparent 100%),radial-gradient(circle at 57% 89%, rgba(102,252,241, 0.17) 0%, rgba(102,252,241, 0.17) 30%,transparent 30%, transparent 100%),radial-gradient(circle at 39% 80%, rgba(102,252,241, 0.17) 0%, rgba(102,252,241, 0.17) 22%,transparent 22%, transparent 100%),radial-gradient(circle at 88% 71%, rgba(102,252,241, 0.17) 0%, rgba(102,252,241, 0.17) 30%,transparent 30%, transparent 100%),linear-gradient(0deg, rgb(0,0,0),rgb(0,0,0));
+    background-size: cover;
 }
 
 .home .home-content{
@@ -176,7 +178,7 @@ section{
     height: calc(100% + 4px);
     animation: glowingbn5 20s linear infinite;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     border-radius: 10px;
   }
   
@@ -215,86 +217,6 @@ section{
     top: 0;
     border-radius: 10px;
   }
-
-.home .profession-container{
-    position:absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 768px;
-    height: 768px;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.home .profession-container .profession-box{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 768px;
-    height: 768px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home .profession-box .profession{
-    position: absolute;
-    left: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    color:#45A29E;
-    transform: rotate(calc(360deg /2 * var(--i)));
-    transform-origin: 384px;
-    background: var(--bg-color);
-    padding: 13px 0;
-}
-
-.home .profession-box .profession:nth-child(1) i {
-    margin-right: 100px;
-}
-
-.home .profession-box .profession:nth-child(2) i {
-    margin-left: 45px;
-}
-
-.home .profession-box .profession:nth-child(1),
-.home .profession-box .profession:nth-child(2){
-    padding-bottom: 20px;
-}
-
-.home .profession i{
-    font-size: 3.8rem;
-}
-
-.home .profession h3{
-    font-size: 3.2rem;
-    line-height: 1;
-    font-weight: 600;
-}
-
-.home .profession-box .circle{
-    width: 560px;
-    height: 560px;
-    border: 3px solid #66FCF1;
-    border-radius: 50%;
-}
-
-.home .profession-container .overlay{
-    position: absolute;
-    top:0;
-    right: 0;
-    height: 0;
-    width: 0;
-    border-top: 384px solid #45A29E;
-    border-right:384px solid #45A29E;
-    border-bottom: 384px solid #45A29E;
-    border-left: 384px solid transparent;
-}
-
 
 .about{
     display: flex;
@@ -401,7 +323,7 @@ section{
 .contact form .input-box{
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;;
+    flex-wrap: wrap;
 }
 
 .contact form .input-box input,
@@ -409,7 +331,7 @@ section{
     width: 100%;
     padding: 1.5rem;
     font-size: 1.6rem;
-    color: var(--text-color);
+    color: var(--bg-color);
     background-color: var(--white-color );
     border-radius: .8rem;
     margin: .7rem 0;
@@ -475,6 +397,12 @@ section{
 }
 
 @media (max-width:991px){
+    .about-img img{
+        border: 5px solid #000;
+        border-radius: 50%;
+        height: 70%;
+        max-height: 100%;
+    }
 
     .navbar a:nth-child(1),
     .navbar a:nth-child(2){
@@ -488,14 +416,6 @@ section{
 
     .home .home-content{
         max-width: 50rem;
-    }
-
-    .home .profession-container .profession-box{
-        right: -45rem;
-    }
-
-    .home .profession-container .overlay{
-        right: -39.5rem;
     }
 
     .home-img img{
@@ -534,6 +454,10 @@ section{
         display: none;
     }
 
+    .navbar.active{
+        display: block;
+    }
+
     .navbar a{
         display: block;
         font-size: 2rem;
@@ -554,4 +478,3 @@ section{
         display: none;
     }
 }
-
