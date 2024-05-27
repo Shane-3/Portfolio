@@ -23,7 +23,6 @@
 
 html{
     font-size: 62.5%;
-    overflow-x: hidden;
 }
 
 body{
@@ -31,7 +30,41 @@ body{
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
+
+body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px; 
+    opacity: 0; 
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: var(--bg-color); 
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--main-color); 
+    border-radius: 5px; 
+  }
+  
+  .content-wrapper {
+    overflow-y: scroll; 
+    position: relative;
+  }
+  
+  .content-wrapper:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(to right, #f1f1f1 0%, #f1f1f1 60%, rgba(0, 0, 0, 0) 100%); /* Create a gradient effect */
+  }
+  
 
 .header {
     position: fixed;
