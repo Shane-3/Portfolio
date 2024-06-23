@@ -31,21 +31,12 @@ body{
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 body::-webkit-scrollbar {
-    width: 10px;
-    height: 10px; 
-    opacity: 0; 
-  }
-  
-  body::-webkit-scrollbar-track {
-    background-color: var(--bg-color); 
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: var(--main-color); 
-    border-radius: 5px; 
+    display: none; 
   }
   
   .content-wrapper {
